@@ -1,8 +1,8 @@
 #Code book
 
-subject_id | Subject identification
-activity_label | Activities: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
-tBodyAcc | The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
+|subject_id | Subject identification|
+|activity_label | Activities: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING|
+|tBodyAcc | The body acceleration signal obtained by subtracting the gravity from the total acceleration|
 tGravityAcc | The angular acceleration vector measured by the gyroscope for each window sample.
 tBodyAccJerk_mean_X
 tBodyGyro | The angular velocity vector measured by the gyroscope for each window sample.
