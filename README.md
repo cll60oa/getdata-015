@@ -1,4 +1,7 @@
-**Load the requried packages**
+
+###Step-by-step breakdown of the run_analysis.R
+
+**Load the two requried packages**
 ```{r}
 library(dplyr)
 library(tidyr)
