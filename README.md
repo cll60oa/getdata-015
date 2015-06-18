@@ -1,5 +1,5 @@
 **Load the requried packages**
-```R
+```r
 library(dplyr)
 library(tidyr)
 ```
