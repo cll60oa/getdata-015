@@ -1,6 +1,8 @@
 **Load the requried packages**
-> library(dplyr)
-> library(tidyr)
+'''
+library(dplyr)
+library(tidyr)
+'''
 
 # dowload the file and unzip it
 fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
