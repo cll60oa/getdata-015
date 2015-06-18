@@ -13,7 +13,7 @@ fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%2
 download.file(fileURL,destfile="UCI HAR Dataset.zip" ,method='curl')
 unzip("UCI HAR Dataset.zip")
 ```
-Now, the data is unzipped to the fold "./UCI HAR Dataset/".
+Now, the data is unzipped under the folder "./UCI HAR Dataset/" in your working directory.
 
 **Merges the three data (subject id, activity label and features) in the training and test sets respectively to create one data set**
 ```
