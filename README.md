@@ -34,9 +34,13 @@ all_561_features <- rbind(test_561_features,train_561_features)
 ```
 
 
-# Extracts only the measurements on the mean and standard deviation for each measurement. 
-features_ <- read.table('UCI HAR Dataset/features.txt')
-mean.sd <- grep('mean\\(|std\\(',features_[,2])
-features_mean.sd <- select(all_561_features,mean.sd)
+**Extracts only the measurements on the mean (mean) and standard deviation (std) for each measurement**
+```
+features_ <- read.table('UCI HAR Dataset/features.txt') # read the feature file
+mean.sd <- grep('mean\\(|std\\(',features_[,2]) # search for mean( and std(
+features_mean.sd <- select(all_561_features,mean.sd) # extract the result
+```
 
+```
 write.table(average_data,file="./average_data.txt",sep="\t", row.name=FALSE)
+```
