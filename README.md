@@ -24,26 +24,25 @@ all_subject_id <- rbind(test_subject_id, train_subject_id)
 
 # activity label
 test_activity_label <- read.table('UCI HAR Dataset/test/y_test.txt')
+> tbl_df(test_activity_label)
+Source: local data frame [2,947 x 1]
+   V1
+1   5
+2   5
+
 train_activity_label <- read.table('UCI HAR Dataset/train/y_train.txt')
+> tbl_df(train_activity_label)
+Source: local data frame [7,352 x 1]
+   V1
+1   5
+2   5
+
 all_activity_label <- rbind(test_activity_label,train_activity_label)
-
-> > tbl_df(test_activity_label)
-> Source: local data frame [2,947 x 1]
->    V1
-> 1   5
-> 2   5
-
-> > tbl_df(train_activity_label)
-> Source: local data frame [7,352 x 1]
->    V1
-> 1   5
-> 2   5
-
-> > tbl_df(all_activity_label)
-> Source: local data frame [10,299 x 1]
->    V1
-> 1   5
-> 2   5
+> tbl_df(all_activity_label)
+Source: local data frame [10,299 x 1]
+   V1
+1   5
+2   5
 
 # features
 test_561_features <- read.table('UCI HAR Dataset/test/X_test.txt')
