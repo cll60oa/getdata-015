@@ -21,18 +21,20 @@ Now, the data is unzipped under the folder "./UCI HAR Dataset/" in your working 
 test_subject_id <- read.table('UCI HAR Dataset/test/subject_test.txt')
 train_subject_id <-  read.table('UCI HAR Dataset/train//subject_train.txt')
 all_subject_id <- rbind(test_subject_id, train_subject_id)
-
+```
+```
 # activity label
 test_activity_label <- read.table('UCI HAR Dataset/test/y_test.txt')
 train_activity_label <- read.table('UCI HAR Dataset/train/y_train.txt')
 all_activity_label <- rbind(test_activity_label,train_activity_label)
->> dim(test_activity_label)
->[1] 2947    1
->> dim(train_activity_label)
->[1] 7352    1
->> dim(all_activity_label)
->[1] 10299     1
-
+> dim(test_activity_label)
+[1] 2947    1
+> dim(train_activity_label)
+[1] 7352    1
+> dim(all_activity_label)
+[1] 10299     1
+```
+```
 # features
 test_561_features <- read.table('UCI HAR Dataset/test/X_test.txt')
 train_561_features <- read.table('UCI HAR Dataset/train/X_train.txt')
