@@ -111,7 +111,7 @@ names(all_subject_id) <- "subject_id"
 names(all_activity_label) <- "activity_label"
 names(features_mean.sd) <- gsub("\\(\\)","", features_[mean.sd,2]) %>% gsub(pattern="-", replacement="_")
 ```
-**7. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.**
+**7. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.**
 
 **8. Write the result to a local file**
 ```
