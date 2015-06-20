@@ -74,8 +74,11 @@ features_mean.sd <- select(all_561_features,mean.sd)
 ```
 
 **5. Uses descriptive activity names to name the activities in the data set**
-
-Before:
+```
+activity_labels <- read.table('./UCI HAR Dataset/activity_labels.txt')
+all_activity_label[,1] <- activity_labels[all_activity_label[,1],2]
+```
+Before this step, activity data set looks like:
 ```
 > tbl_df(all_activity_label)
 Source: local data frame [10,299 x 1]
@@ -87,12 +90,8 @@ Source: local data frame [10,299 x 1]
 5   5
 .. ..
 ```
-```
-activity_labels <- read.table('./UCI HAR Dataset/activity_labels.txt')
-all_activity_label[,1] <- activity_labels[all_activity_label[,1],2]
-```
 
-After:
+After this step, activity data set looks like::
 ```
 > tbl_df(all_activity_label)
 Source: local data frame [10,299 x 1]
