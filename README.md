@@ -70,11 +70,12 @@ mean.sd <- grep('mean\\(|std\\(',features_[,2])
 
 Use select() to extract the results.
 ```
-features_mean.sd <- select(all_561_features,mean.sd) # extract the result
+features_mean.sd <- select(all_561_features,mean.sd)
 ```
 
 **5. Uses descriptive activity names to name the activities in the data set**
 Before:
+```
 > tbl_df(all_activity_label)
 Source: local data frame [10,299 x 1]
    V1
@@ -84,13 +85,14 @@ Source: local data frame [10,299 x 1]
 4   5
 5   5
 .. ..
-
+```
 ```
 activity_labels <- read.table('./UCI HAR Dataset/activity_labels.txt')
 all_activity_label[,1] <- activity_labels[all_activity_label[,1],2]
 ```
 
 After:
+```
 > tbl_df(all_activity_label)
 Source: local data frame [10,299 x 1]
          V1
@@ -100,7 +102,7 @@ Source: local data frame [10,299 x 1]
 4  STANDING
 5  STANDING
 ..      ...
-
+```
 
 
 
