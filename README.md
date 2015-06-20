@@ -17,6 +17,7 @@ Now, the data is unzipped under the folder "./UCI HAR Dataset/" in your working 
 
 
 **Merges the three data (subject id, activity label and features) in the training and test sets respectively to create one data set**
+
 Merge the subject id files:
 ```
 # subject id
