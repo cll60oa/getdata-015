@@ -105,12 +105,15 @@ Source: local data frame [10,299 x 1]
 ```
 
 **6. Appropriately labels the data set with descriptive variable names.** 
+Manually name the column names in each data set:
 ```
 names(all_subject_id) <- "subject_id"
 names(all_activity_label) <- "activity_label"
 names(features_mean.sd) <- gsub("\\(\\)","", features_[mean.sd,2]) %>% gsub(pattern="-", replacement="_")
 ```
+**7. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.**
 
+**8. Write the result to a local file**
 ```
 write.table(average_data,file="./average_data.txt",sep="\t", row.name=FALSE)
 ```
