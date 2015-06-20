@@ -1,13 +1,13 @@
 
 ###Step-by-step breakdown of the run_analysis.R
 
-**1.Load the two requried packages**
+**1. Load the two requried packages**
 ```
 library(dplyr)
 library(tidyr)
 ```
 
-**2.Dowload the file and unzip it**
+**2. Dowload the file and unzip it**
 ```
 fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(fileURL,destfile="UCI HAR Dataset.zip" ,method='curl')
@@ -17,7 +17,7 @@ Now, the data is unzipped under the folder "./UCI HAR Dataset/" in your working 
 
 
 
-**3.Merges the three data (subject id, activity label and features) in the training and test sets respectively to create one data set**
+**3. Merges the three data (subject id, activity label and features) in the training and test sets respectively to create one data set**
 
 Merge the subject id files:
 ```
