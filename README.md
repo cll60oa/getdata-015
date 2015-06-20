@@ -74,6 +74,7 @@ features_mean.sd <- select(all_561_features,mean.sd)
 ```
 
 **5. Uses descriptive activity names to name the activities in the data set**
+
 Before:
 ```
 > tbl_df(all_activity_label)
