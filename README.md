@@ -1,13 +1,13 @@
 
 ###Step-by-step breakdown of the run_analysis.R
 
-**1. Load the two requried packages**
+**1. Load the two requried packages.**
 ```
 library(dplyr)
 library(tidyr)
 ```
 
-**2. Dowload the file and unzip it**
+**2. Dowload the file and unzip it.**
 ```
 fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(fileURL,destfile="UCI HAR Dataset.zip" ,method='curl')
@@ -17,7 +17,7 @@ Now, the data is unzipped under the folder "./UCI HAR Dataset/" in your working 
 
 
 
-**3. Merges the three data (subject id, activity label and features) in the training and test sets respectively to create one data set**
+**3. Merges the three data (subject id, activity label and features) in the training and test sets respectively to create one data set.**
 
 Merge the subject id files:
 ```
@@ -44,7 +44,7 @@ all_561_features <- rbind(test_561_features,train_561_features)
 ```
 
 
-**4. Extracts only the measurements on the mean (mean) and standard deviation (std) for each measurement**
+**4. Extracts only the measurements on the mean (mean) and standard deviation (std) for each measurement.**
 Load the feature file:
 ```
 features_ <- read.table('UCI HAR Dataset/features.txt')
@@ -73,7 +73,7 @@ Use select() to extract the results.
 features_mean.sd <- select(all_561_features,mean.sd)
 ```
 
-**5. Uses descriptive activity names to name the activities in the data set**
+**5. Uses descriptive activity names to name the activities in the data set.**
 ```
 activity_labels <- read.table('./UCI HAR Dataset/activity_labels.txt')
 all_activity_label[,1] <- activity_labels[all_activity_label[,1],2]
@@ -104,7 +104,12 @@ Source: local data frame [10,299 x 1]
 ..      ...
 ```
 
-
+**6. Appropriately labels the data set with descriptive variable names.** 
+```
+names(all_subject_id) <- "subject_id"
+names(all_activity_label) <- "activity_label"
+names(features_mean.sd) <- gsub("\\(\\)","", features_[mean.sd,2]) %>% gsub(pattern="-", replacement="_")
+```
 
 ```
 write.table(average_data,file="./average_data.txt",sep="\t", row.name=FALSE)
