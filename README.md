@@ -27,6 +27,8 @@ all_subject_id <- rbind(test_subject_id, train_subject_id)
 test_activity_label <- read.table('UCI HAR Dataset/test/y_test.txt')
 train_activity_label <- read.table('UCI HAR Dataset/train/y_train.txt')
 all_activity_label <- rbind(test_activity_label,train_activity_label)
+```
+```
 > dim(test_activity_label)
 [1] 2947    1
 > dim(train_activity_label)
