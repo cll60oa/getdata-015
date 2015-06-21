@@ -112,8 +112,59 @@ names(all_activity_label) <- "activity_label"
 names(features_mean.sd) <- gsub("\\(\\)","", features_[mean.sd,2]) %>% gsub(pattern="-", replacement="_")
 ```
 **7. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.**
+```
+all_data_sets <- cbind(all_subject_id,all_activity_label,features_mean.sd)
+average_data <- all_data_sets %>%
+gather(features,values,tBodyAcc_mean_X:fBodyBodyGyroJerkMag_std) %>%
+group_by(features,subject_id,activity_label) %>%
+summarize(mean=mean(values)) %>%
+spread(features,mean)
+```
+The following blockquotes show how the data frame changes after each step:
+```
+> all_data_sets
+Source: local data frame [10,299 x 68]
 
+   subject_id     activity_label tBodyAcc_mean_X tBodyAcc_mean_Y tBodyAcc_mean_Z tBodyAcc_std_X
+1           2 WALKING_DOWNSTAIRS       0.2571778     -0.02328523     -0.01465376     -0.9384040
+2           2 WALKING_DOWNSTAIRS       0.2860267     -0.01316336     -0.11908252     -0.9754147
+```
+gather(features,values,tBodyAcc_mean_X:fBodyBodyGyroJerkMag_std)
+```
+Source: local data frame [679,734 x 4]
+
+   subject_id     activity_label        features    values
+1           2 WALKING_DOWNSTAIRS tBodyAcc_mean_X 0.2571778
+2           2 WALKING_DOWNSTAIRS tBodyAcc_mean_X 0.2860267
+```
+group_by(features,subject_id,activity_label)
+```
+Source: local data frame [679,734 x 4]
+Groups: features, subject_id, activity_label
+
+   subject_id     activity_label        features    values
+1           2 WALKING_DOWNSTAIRS tBodyAcc_mean_X 0.2571778
+2           2 WALKING_DOWNSTAIRS tBodyAcc_mean_X 0.2860267
+```
+summarize(mean=mean(values))
+```
+Source: local data frame [11,880 x 4]
+
+          features subject_id     activity_label      mean
+1  tBodyAcc_mean_X          1             LAYING 0.2554617
+2  tBodyAcc_mean_X          1            SITTING 0.2773308
+```
+spread(features,mean)
+```
+Source: local data frame [180 x 68]
+
+   subject_id     activity_label tBodyAcc_mean_X tBodyAcc_mean_Y tBodyAcc_mean_Z tBodyAcc_std_X
+1           1             LAYING       0.2554617    -0.023953149      -0.0973020    -0.35470803
+2           1            SITTING       0.2773308    -0.017383819      -0.1111481    -0.28374026
 **8. Write the result to a local file**
+```
+
+**8. Write the result to the average_data.txt**
 ```
 write.table(average_data,file="./average_data.txt",sep="\t", row.name=FALSE)
 ```
