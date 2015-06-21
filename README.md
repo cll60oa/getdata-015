@@ -161,7 +161,6 @@ Source: local data frame [180 x 68]
    subject_id     activity_label tBodyAcc_mean_X tBodyAcc_mean_Y tBodyAcc_mean_Z tBodyAcc_std_X
 1           1             LAYING       0.2554617    -0.023953149      -0.0973020    -0.35470803
 2           1            SITTING       0.2773308    -0.017383819      -0.1111481    -0.28374026
-**8. Write the result to a local file**
 ```
 
 **8. Write the result to the average_data.txt**
